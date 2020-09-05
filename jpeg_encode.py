@@ -1,6 +1,7 @@
 from bmp_reader import ReadBMPFile
 import numpy as np
 from struct import pack
+import sys
 
 # quantization matrix
 Y_mat = [[8, 6, 5, 8, 12, 20, 26, 31],
@@ -337,4 +338,10 @@ def main(bmp_path, jpeg_path):
     write_file(''.join(data_hex_string), bmp.biHeight, bmp.biWidth, jpeg_path)
 
 
-main(bmp_path='./lena512color.bmp', jpeg_path='ret.jpg')
+if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        print('Parameter should be two!\n eg: python jpeg_encode.py lena512color.bmp ret.jpeg')
+        exit(0)
+    bmp_file = sys.argv[1]
+    jpeg_file = sys.argv[2]
+    main(bmp_file, jpeg_file)
