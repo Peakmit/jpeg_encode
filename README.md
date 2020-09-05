@@ -10,3 +10,4 @@
  refference:
  https://github.com/thejinchao/jpeg_encoder
  https://thecodeway.com/blog/?p=69
+ https://github.com/xh-zh/ImageProcessing_JPEG
